@@ -33,9 +33,9 @@
     <name>Apache Sling Validation Framework Testing Services</name>
 
     <scm>
-        <connection>scm:svn:http://svn.apache.org/repos/asf/sling/trunk/bundles/extensions/validation/test-services</connection>
+        <connection>scm:git:https://gitbox.apache.org/repos/asf/sling-org-apache-sling-validation-test-services.git</conncetion>
         <developerConnection> scm:svn:https://svn.apache.org/repos/asf/sling/trunk/bundles/extensions/validation/test-services</developerConnection>
-        <url>http://svn.apache.org/viewvc/sling/trunk/bundles/extensions/validation/test-services</url>
+        <url>https://gitbox.apache.org/repos/asf?p=sling-org-apache-sling-validation-test-services.git.git</url>
     </scm>
 
     <build>
