@@ -22,13 +22,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ResourceBundle;
 
-import javax.annotation.Nonnull;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.felix.utils.json.JSONWriter;
 import org.apache.sling.servlets.post.AbstractPostResponse;
 import org.apache.sling.validation.ValidationFailure;
 import org.apache.sling.validation.ValidationResult;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -38,7 +38,7 @@ public class ValidationPostResponse extends AbstractPostResponse {
     private final ResourceBundle resourceBundle;
     private static final Logger LOG = LoggerFactory.getLogger(ValidationPostResponse.class);
 
-    public ValidationPostResponse(@Nonnull ResourceBundle resourceBundle) {
+    public ValidationPostResponse(@NotNull ResourceBundle resourceBundle) {
         this.resourceBundle = resourceBundle;
     }
 
