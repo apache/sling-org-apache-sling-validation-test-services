@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.request.RequestParameter;
 import org.apache.sling.api.wrappers.ValueMapDecorator;
 import org.apache.sling.servlets.post.AbstractPostOperation;
 import org.apache.sling.servlets.post.Modification;
@@ -61,8 +62,9 @@ public class ValidationPostOperation extends AbstractPostOperation {
                 valueMap.put(name, request.getRequestParameter(name).getString());
             }
 
-            final String resourceType = request.getRequestParameter("sling:resourceType").getString();
-            if (resourceType != null && !"".equals(resourceType)) {
+            RequestParameter parameter = request.getRequestParameter("sling:resourceType");
+            if (parameter != null && !"".equals(parameter.getString())) {
+                final String resourceType = parameter.getString();
                 final String resourcePath = request.getRequestPathInfo().getResourcePath();
                 final ValidationModel validationModel = validationService.getValidationModel(resourceType, resourcePath, false);
                 if (validationModel != null) {

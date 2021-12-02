@@ -21,14 +21,13 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.apache.sling</groupId>
-        <artifactId>sling</artifactId>
-        <version>32</version>
+        <artifactId>sling-bundle-parent</artifactId>
+        <version>46</version>
         <relativePath />
     </parent>
 
     <artifactId>org.apache.sling.validation.test-services</artifactId>
     <version>1.0.5-SNAPSHOT</version>
-    <packaging>bundle</packaging>
 
     <name>Apache Sling Validation Framework Testing Services</name>
 
@@ -41,46 +40,24 @@
 
     <properties>
         <sling.java.version>8</sling.java.version>
+        <project.build.outputTimestamp>2020-01-22T15:10:38Z</project.build.outputTimestamp>
     </properties>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <extensions>true</extensions>
-                <configuration>
-                    <instructions>
-                        <Sling-Initial-Content>SLING-CONTENT/apps/sling/validation;overwrite:=true;path:=/apps/sling/validation</Sling-Initial-Content>
-                        <Embed-Dependency>
-                            org.apache.felix.utils;inline=org/apache/felix/utils/json/JSONWriter.class
-                        </Embed-Dependency>
-                    </instructions>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <dependencies>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.component.annotations</artifactId>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>osgi.cmpn</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>osgi.core</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
-            <version>16.0.2</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
