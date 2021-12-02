@@ -41,6 +41,9 @@ public class ValidationPostResponseCreator implements PostResponseCreator {
         String operation = request.getParameter(SlingPostConstants.RP_OPERATION);
         if (operation != null && "validation".equals(operation)) {
             final ResourceBundle resourceBundle = request.getResourceBundle(Locale.US);
+            if (resourceBundle == null) {
+                throw new IllegalStateException("Could not get resource bundle for locale " + Locale.US);
+            }
             logger.debug("resource bundle: {}", resourceBundle);
             return new ValidationPostResponse(resourceBundle);
         }
